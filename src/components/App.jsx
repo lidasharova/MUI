@@ -12,7 +12,7 @@ const App = () => {
   const [order, setOrder] = useState([]);
   const [search, setSearch] = useState('');
   const [products, setProducts] = useState(goods);
-  const [isCardOpen, setCardOpen] = useState(false);
+  const [isCartOpen, setCartOpen] = useState(false);
   const [isSnackOpen, setSnackOpen] = useState(false);
 
   const handleChange = (e) => {
@@ -69,16 +69,16 @@ const App = () => {
 
   return (
     <>
-      <Header handleCard={() => setCardOpen(true)} orderLen={order.length} />
+      <Header handleCart={() => setCartOpen(true)} orderLen={order.length} />
       <Container sx={{ mt: '1rem' }}>
         <Search value={search} onChange={handleChange} />
         <GoodsList goods={products} setOrder={addToOrder} />
       </Container>
       <Basket
         order={order}
-        cardOpen={isCardOpen}
+        cartOpen={isCartOpen}
         removeFromOrder={removeFromOrder}
-        closeCard={() => setCardOpen(false)}
+        closeCart={() => setCartOpen(false)}
       />
       <Snack isOpen={isSnackOpen} handleClose={() => setSnackOpen(false)} />
     </>

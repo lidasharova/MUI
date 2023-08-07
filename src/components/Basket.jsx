@@ -13,14 +13,14 @@ import BasketItem from './BasketItem';
 
 export const Basket = (props) => {
   const {
-    cardOpen,
+    cartOpen,
     order = [],
     removeFromOrder,
-    closeCard = Function.prototype,
+    closeCart = Function.prototype,
   } = props;
 
   return (
-    <Drawer anchor="right" open={cardOpen} onClose={closeCard}>
+    <Drawer anchor="right" open={cartOpen} onClose={closeCart}>
       <List sx={{ width: '400px' }}>
         <ListItem>
           <ListItemIcon>
