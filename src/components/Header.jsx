@@ -6,6 +6,7 @@ import {
   Badge,
   Link,
   Button,
+  Box,
 } from '@mui/material';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import React from 'react';
@@ -31,7 +32,12 @@ function Header({ handleCart, orderLen }) {
           PetJoy
         </Typography>
 
-        <div sx={{ display: 'flex', alignItems: 'center' }}>
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          padding={2}
+        >
           {navItems.map((item) => (
             <Button
               key={item.text}
@@ -42,7 +48,7 @@ function Header({ handleCart, orderLen }) {
               {item.text}
             </Button>
           ))}
-        </div>
+        </Box>
 
         <IconButton color="inherit" onClick={handleCart}>
           <Badge color="secondary" badgeContent={orderLen}>
